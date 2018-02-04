@@ -6,7 +6,7 @@ Restauarant Catalog Project gives users a list of all restaurants and its menu d
 
 ## Getting Started
 
-clone the repository and then in the terminal type the following commands
+clone the repository as fullstack and then in the terminal type the following commands
 * cd fullstack/vagrant
 * vagrant up (to run the vagrant environment)
 * vagrant ssh (to log into yourr virtual machine)
