@@ -23,7 +23,7 @@ APPLICATION_NAME = "Restaurant Project"
 
 
 #database conncttion
-engine= create_engine('sqlite:///project_catalog_with_users.db')
+engine= create_engine('sqlite:///project_catalog_with_users_final.db')
 Base.metadata.bind = engine
 DBSession =sessionmaker(bind=engine)
 session =DBSession()
@@ -280,11 +280,10 @@ def getUserID(email):
 # add new restaurant
 @app.route('/restaurants/new',methods=['GET', 'POST'])
 def newRestaurant():
-	print(login_session)
-	all_restaurants=session.query(Restaurant).all()
 	if 'username' not in login_session:
 		return redirect('login')
 	else:
+		all_restaurants=session.query(Restaurant).all()
 		creator_name=login_session['username']
 		creator_picture=login_session['picture']
 		if request.method=='POST':

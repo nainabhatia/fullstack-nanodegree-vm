@@ -28,6 +28,8 @@ class Restaurant(Base):
 	id=Column(Integer, primary_key = True)
 	user = relationship(User)
 	user_id = Column(Integer,ForeignKey('user.id'))
+	items=relationship('MenuItem',cascade='all,delete')
+	
 	
 
 	@property
@@ -63,5 +65,5 @@ class MenuItem(Base):
 		}
 
 
-engine= create_engine('sqlite:///project_catalog_with_users.db')
+engine= create_engine('sqlite:///project_catalog_with_users_final.db')
 Base.metadata.create_all(engine)
